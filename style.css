@@ -1,0 +1,53 @@
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;    
+    border-radius: 5px;
+    display: inline-block;
+}
+nav ul li a:hover { 
+    background-color: #555; /*added hover effect to links*/
+    
+}
+main {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 20px;
+}
+h1 {
+    color: #333;
+}
+h2 {
+    color: #666;
+}
+ul {
+    text-align: left;
+    display: inline-block;
+    margin-top: 10px;
+}
+ul li {
+    margin-bottom: 5px;
+}
