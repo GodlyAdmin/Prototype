@@ -16,7 +16,7 @@ header {
     right: 0;
     z-index: 9999;
     opacity: 0.75; /*added opacity to header for better visibility of content when scrolling*/
-    height: 70px; /*added fixed height to header for consistent layout*/
+    height: 40px; /*added fixed height to header for consistent layout*/
 }
 nav ul {
     list-style-type: none;
