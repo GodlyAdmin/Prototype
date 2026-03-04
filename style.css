@@ -4,11 +4,19 @@ body{
     margin: 0;
     padding: 20px;
     text-align: center;
+    height: 1000px; /*added height to body to allow for scrolling*/
 }
 header {
-    background-color: #333;
+    background-color: black;
     color: white;
     padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    opacity: 0.75; /*added opacity to header for better visibility of content when scrolling*/
+    height: 70px; /*added fixed height to header for consistent layout*/
 }
 nav ul {
     list-style-type: none;
@@ -26,8 +34,9 @@ nav ul li a {
     display: inline-block;
 }
 nav ul li a:hover { 
-    background-color: #555; /*added hover effect to links*/
-    
+    color: rgb(176, 176, 176);
+    transition: transform 0.2s ease, color 0.2s ease; /*added size increase on hover for better user experience*/
+    transform: scale(1.1);
 }
 main {
     background-color: white;
@@ -35,7 +44,8 @@ main {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    margin-top: 20px;
+    contain: content;
+    margin-top: 35px;   
 }
 h1 {
     color: #333;
@@ -50,4 +60,49 @@ ul {
 }
 ul li {
     margin-bottom: 5px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+}   
+
+.layout {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+.side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.side img {
+    width: 250px;
+    height: auto;
+}
+
+.center {
+    max-width: 800px;
+}
+
+main,
+.scrollablecontentcontainer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.scrollablecontentcontainer {
+    max-height: 300px;
+    overflow-y: auto;
 }
