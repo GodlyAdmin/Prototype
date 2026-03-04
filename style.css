@@ -32,6 +32,7 @@ nav ul li a {
     font-weight: bold;    
     border-radius: 5px;
     display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease; /*added size increase on hover for better user experience*/
 }
 nav ul li a:hover { 
     color: rgb(176, 176, 176);
@@ -44,8 +45,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    contain: content;
-    margin-top: 35px;   
+    contain: content;   
 }
 h1 {
     color: #333;
