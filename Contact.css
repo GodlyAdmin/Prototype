@@ -1,10 +1,15 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 body{
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     text-align: center;
-    height: 1000px; /*added height to body to allow for scrolling*/
+    min-height: 100vh; /*added height to body to allow for scrolling*/
 }
 header {
     background-color: black;
@@ -45,8 +50,7 @@ main {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    contain: content;
-    margin-top: 35px;   
+    contain: content;  
 }
 h1 {
     color: #333;
@@ -106,4 +110,31 @@ main,
 .scrollablecontentcontainer {
     max-height: 300px;
     overflow-y: auto;
+}
+
+.background{
+    position: relative; /* Establishes a positioning context for the video and content */
+    height: 100vh; /* Makes the container full height of the viewport */
+    overflow: hidden; /* Hides any video overflow */
+    padding-top: 40px; /* Adjusted padding to account for fixed header height */
+}
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the video */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Pushes the video behind other content */
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+}
+.content {
+    position: relative; /* Brings content to the front */
+    z-index: 1;
+    color: white; /* Makes text visible */
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); /*Add a semi-transparent background to improve text readability */
 }

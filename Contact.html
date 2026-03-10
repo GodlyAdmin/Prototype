@@ -7,7 +7,12 @@
         <link rel="stylesheet" type="text/css" href="Contact.css">
     </head>
     <body>
-     <div id="background"> <!--added background div to allow for background video-->
+     <div class="background"> <!--added background div to allow for background video-->
+        <video autoplay muted loop playsinline poster="kntl3bzy.jpg" id="background-video"> <!--added video element for background video-->
+            <source src="Chamber_Live_Loop.mp4" type="video/mp4"> <!--added background video source-->
+            <source src="Chamber_Live_Loop.webm" type="video/webm"> <!--added fallback video source-->
+            Your browser does not support the video tag.
+        </video>
         <header>
          <nav>
             <ul>
@@ -23,16 +28,13 @@
             </ul>
          </nav>
         </header>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+      <div class="layout">  
         <main>
             <h1>Contact Information</h1> <!--added heading for contact information-->
             <h2>Get in Touch</h2>
             <p>Email: 123456789ghimire@gmail.com</p>
         </main>
+      </div>  
         <footer>
             <p>&copy; 2026 Admin-HunterZolomon. All rights reserved.</p>
         </footer>

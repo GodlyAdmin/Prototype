@@ -6,17 +6,22 @@
           <link rel="stylesheet" type="text/css" href="style.css">
         </head>
         <body>
-         <div id="background"> <!--added background div to allow for background video-->
+         <div class="background"> <!--added background div to allow for background video-->
+            <video autoplay muted loop playsinline poster="kntl3bzy.jpg" id="background-video"> <!--added video element for background video-->
+                <source src="Chamber_Live_Loop.mp4" type="video/mp4"> <!--added background video source-->
+                <source src="Chamber_Live_Loop.webm" type="video/webm"> <!--added fallback video source-->
+                Your browser does not support the video tag.
+            </video>
             <header>
              <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li   > <!--added link to home page-->
+                    <li><a href="index.html">Home</a></li> <!--added link to home page-->
                     <li><a href="Journey.html">Gaming Journey</a></li> <!--added link to gaming journey page-->
                     <li><a href="Contact.html">Contact</a></li> <!--added link to contact page-->
                 </ul>    
              </nav>
             </header>
-            
+           <div class="layout"> 
             <main>
                 <h1>Channel name: Admin-HunterZolomon</h1>
                 <h2>Contents</h2>
@@ -28,11 +33,9 @@
 
                 </ul>
             </main>
+           </div> 
             <footer>
-            <p>&copy; 2026 Admin-HunterZolomon. All rights reserved.</p> <!--updated copyright year and name-->
-
-
-
+                <p>&copy; 2026 Admin-HunterZolomon. All rights reserved.</p> <!--Added copyright year and name-->
             </footer>
          </div>
         </body>
