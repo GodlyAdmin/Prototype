@@ -14,22 +14,29 @@ body{
     padding-top: 0; /* Adjusted padding to prevent extra space at the top */
     text-align: center;
     min-height: 100vh; /*added height to body to allow for scrolling*/
-    
+    display: flex;
+    flex-direction: column;
 }
 header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: black;
     color: white;
     padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
+    flex-shrink: 0;
     opacity: 0.75; /*added opacity to header for better visibility of content when scrolling*/
-    height: 40px; /*added fixed height to header for consistent layout*/
+}
+header h1 {
+    margin-bottom: 10px; /* Added margin to create space between the header title and navigation */
+    text-decoration: underline; /* Added underline to the header title for better visual separation */
 }
 nav ul {
+    display: flex;
+    gap: 20px;
     list-style-type: none;
+    margin: 0;
     padding: 0;
 }
 nav ul li {
@@ -51,16 +58,16 @@ nav ul li a:hover {
 }
 main {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
     contain: content;   
 }
-h1 {
+main h1 {
     color: #333;
 }
-h2 {
+main h2 {
     color: #666;
 }
 ul {
@@ -120,10 +127,9 @@ main,
 .background{
     display: flex;/* Use flexbox to center content */
     flex-direction: column; /* Stack content vertically */
-    min-height: 100vh; /* Ensure the background takes at least the full viewport height */
+    flex: 1; /* Takes up remaining space after header */
     position: relative; /* Establishes a positioning context for the video and content */
-    height: 100vh; /* Makes the container full height of the viewport */
-    padding-top: 40px; /* Adjusted padding to account for fixed header height */
+    overflow-y: auto; /* Allow scrolling for content that exceeds viewport */
 }
 #background-video {
     position: fixed; /* Fixes the video in place */
