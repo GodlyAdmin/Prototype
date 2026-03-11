@@ -28,7 +28,8 @@ header {
     flex-shrink: 0;
     opacity: 0.75; /*added opacity to header for better visibility of content when scrolling*/
 }
-header h1 {
+header h2 {
+    font-size: 28px;/* Increased font size, and forced it to be the same on all pages */
     margin-bottom: 10px; /* Added margin to create space between the header title and navigation */
     text-decoration: underline; /* Added underline to the header title for better visual separation */
 }
@@ -88,31 +89,39 @@ footer {
 }   
 
 .layout {
-    flex: 1;/* Allow the layout to grow and fill available space */
     display: flex;
     justify-content: center;
-    gap: 30px;
-    margin: 30px 0;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 30px auto;
+    max-width: 1200px;
+    width: 100%;
+    flex: 1; /* Takes up remaining space after header */
+    flex-wrap: wrap; /* Allows layout to wrap on smaller screens and prevents overflow */
 }
 
-.side {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.side img{
+    width:100%;
+    height:auto;
+    border-radius:8px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
-.side img {
-    width: 250px;
-    height: auto;
+.side{
+    flex: 0 0 250px; /* fixed width side columns */
+    display:flex;
+    flex-direction:column;
+    gap:80px;
 }
 
-.center {
-    max-width: 800px;
+.center{
+    flex:1; /* main content grows */
+    max-width:700px;
 }
 
 main,
 .scrollablecontentcontainer {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for better readability over the video */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -127,9 +136,9 @@ main,
 .background{
     display: flex;/* Use flexbox to center content */
     flex-direction: column; /* Stack content vertically */
-    flex: 1; /* Takes up remaining space after header */
     position: relative; /* Establishes a positioning context for the video and content */
     overflow-y: auto; /* Allow scrolling for content that exceeds viewport */
+    flex: 1; /* Takes up remaining space after header */
 }
 #background-video {
     position: fixed; /* Fixes the video in place */
