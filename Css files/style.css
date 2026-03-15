@@ -199,7 +199,7 @@ main,
     background: rgba(0, 0, 0, 0.5); /*Add a semi-transparent background to improve text readability */
 }
 
-/* Responsive image section */
+/* @media section */
 @media (max-width: 900px) {
     .layout {
         flex-direction: column;
