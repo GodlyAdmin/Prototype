@@ -107,6 +107,44 @@ footer {
     box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Channel banner */
+.channel-banner {
+    height: 20vh;
+    overflow: hidden;
+}
+
+.channel-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* show the vertical middle 20% of the image (center crop) */
+    object-position: center center;
+}
+
+.img-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 8px 12px;
+    background: rgba(0, 0, 0, 0.72);
+    color: #fff;
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    pointer-events: none;
+    text-align: left;
+}
+
 .side{
     flex: 0 0 250px; /* fixed width side columns */
     display:flex;
@@ -159,4 +197,62 @@ main,
     text-align: center;
     padding: 20px; /* Added padding for better readability */
     background: rgba(0, 0, 0, 0.5); /*Add a semi-transparent background to improve text readability */
+}
+
+/* Responsive image section */
+@media (max-width: 900px) {
+    .layout {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side {
+        flex: 1 1 100%;
+        max-width: 600px;
+    }
+
+    .center {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Hover interactions */
+@media (hover: hover) and (pointer: fine) {
+    .side img {
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .side img:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Small overlay caption on hover/focus */
+    .image-wrapper:hover .img-caption,
+    .image-wrapper:focus-within .img-caption {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .image-wrapper:focus-within {
+        outline: 3px solid rgba(255, 255, 255, 0.85);
+        outline-offset: 4px;
+    }
+
+    .side img:focus-visible {
+        outline: 3px solid rgba(255, 255, 255, 0.85);
+        outline-offset: 4px;
+    }
 }
