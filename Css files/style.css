@@ -7,7 +7,7 @@ html, body {
     height: 100%;
     overflow-x: hidden;
 }
-body{
+body{ /* Body for all 3 pages */
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
@@ -17,23 +17,27 @@ body{
     display: flex;
     flex-direction: column;
 }
-header {
+header { /* Header for all 3 pages */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.75);
     color: white;
     padding: 10px 0;
     flex-shrink: 0;
-    opacity: 0.75; /*added opacity to header for better visibility of content when scrolling*/
+    position: relative;
 }
-header h2 {
+header h2 { /* Header text for all 3 pages */
     font-size: 28px;/* Increased font size, and forced it to be the same on all pages */
     margin-bottom: 10px; /* Added margin to create space between the header title and navigation */
     text-decoration: underline; /* Added underline to the header title for better visual separation */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
-nav ul {
+nav ul { /* Navigation menu for all 3 pages */
     display: flex;
     gap: 20px;
     list-style-type: none;
@@ -52,55 +56,55 @@ nav ul li a {
     display: inline-block;
     transition: transform 0.2s ease, color 0.2s ease; /*added size increase on hover for better user experience*/
 }
-nav ul li a:hover { 
+nav ul li a:hover { /* Hover effect for navigation all nav bar links in all pages */
     color: rgb(176, 176, 176);
     transition: transform 0.2s ease, color 0.2s ease; /*added size increase on hover for better user experience*/
     transform: scale(1.1);
 }
-main {
+main { /* Main content area for all 3 pages */
     background-color: white;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     display: inline-block;
     contain: content;   
+    margin: 20px 0; /* Added margin to create space between the main content and footer */;
 }
-main h1 {
+main h1 { /* Main title for all 3 pages */
     color: #333;
 }
-main h2 {
+main h2 { /* Subheadings for all 3 pages */
     color: #666;
 }
-ul {
+ul { /* Unordered lists for home page */
     text-align: left;
     display: inline-block;
     margin-top: 10px;
 }
-ul li {
+ul li { 
     margin-bottom: 5px;
 }
 
 
-footer {
+footer {/* Footer for all 3 pages */
     text-align: center;
     padding: 15px;
     background-color: #333;
     color: white;
 }   
 
-.layout {
+.layout {/* Layout for all pages */
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 40px;
     margin: 30px auto;
-    max-width: 1200px;
     width: 100%;
     flex: 1; /* Takes up remaining space after header */
     flex-wrap: wrap; /* Allows layout to wrap on smaller screens and prevents overflow */
 }
 
-.side img{
+.side img{ /* Images in the side columns for Journey page */
     width:100%;
     height:auto;
     border-radius:8px;
@@ -113,7 +117,7 @@ footer {
     width: 100%;
 }
 
-/* Channel banner */
+/* Channel banner for main and content pages */ 
 .channel-banner {
     height: 20vh;
     overflow: hidden;
@@ -129,7 +133,7 @@ footer {
     object-position: center center;
 }
 
-.img-caption {
+.img-caption { /* Caption for images in the side columns for Journey page and channel banner */
     position: absolute;
     left: 0;
     right: 0;
@@ -145,7 +149,7 @@ footer {
     text-align: left;
 }
 
-.side{
+.side{ /* Side columns for Journey page */
     flex: 0 0 250px; /* fixed width side columns */
     display:flex;
     flex-direction:column;
@@ -157,28 +161,14 @@ footer {
     max-width:700px;
 }
 
-main,
-.scrollablecontentcontainer {
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background for better readability over the video */
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.scrollablecontentcontainer {
-    max-height: none; /* Remove fixed height to allow content to expand naturally */
-    overflow-y: auto;
-}
-
-.background{
+.background{ /* Background container for all 3 pages */
     display: flex;/* Use flexbox to center content */
     flex-direction: column; /* Stack content vertically */
     position: relative; /* Establishes a positioning context for the video and content */
     overflow-y: auto; /* Allow scrolling for content that exceeds viewport */
     flex: 1; /* Takes up remaining space after header */
 }
-#background-video {
+#background-video {/* Background video for all 3 pages */
     position: fixed; /* Fixes the video in place */
     top: 50%;
     left: 50%;
@@ -190,7 +180,7 @@ main,
     z-index: -1; /* Pushes the video behind other content */
     object-fit: cover; /* Ensures the video covers the entire area without distortion */
 }
-.content {
+.content {/* Content container for all 3 pages */
     position: relative; /* Brings content to the front */
     z-index: 1;
     color: white; /* Makes text visible */
@@ -198,8 +188,21 @@ main,
     padding: 20px; /* Added padding for better readability */
     background: rgba(0, 0, 0, 0.5); /*Add a semi-transparent background to improve text readability */
 }
+.profile-image { /* Profile image for all 3 pages */
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 99;
+}
+.profile-image-wrapper { /* Profile image for all 3 pages */
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%); /*ensuring the profile is horizontally on the left from the title */
+}       
 
-/* @media section */
+/* @media section for all pages */
 @media (max-width: 900px) {
     .layout {
         flex-direction: column;
@@ -227,7 +230,7 @@ main,
     }
 }
 
-/* Hover interactions */
+/* Hover interactions for all images*/
 @media (hover: hover) and (pointer: fine) {
     .side img {
         cursor: pointer;
